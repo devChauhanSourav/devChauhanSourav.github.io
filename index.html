@@ -233,5 +233,28 @@
     </footer>
   </main>
 
+  <script>
+  (function () {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function applyTheme(e) {
+      // Force repaint by toggling a data attribute
+      document.documentElement.dataset.theme =
+        e.matches ? 'dark' : 'light';
+    }
+
+    // Apply on first load
+    applyTheme(media);
+
+    // Listen for system theme changes (mobile fix)
+    if (media.addEventListener) {
+      media.addEventListener('change', applyTheme);
+    } else if (media.addListener) {
+      // older Safari
+      media.addListener(applyTheme);
+    }
+  })();
+</script>
+
 </body>
 </html>
