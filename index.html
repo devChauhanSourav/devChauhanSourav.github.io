@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark">
   <title>Sourav Chauhan – Senior Full Stack Developer</title>
   <meta name="description" content="Senior Full Stack Developer with 8+ years of experience building scalable web applications using Laravel, Vue.js, and Nuxt.js." />
 
   <style>
+    /* ===============================
+       Theme Variables (Dark Default)
+       =============================== */
     :root {
       --bg: #0b1020;
+      --bg-gradient: radial-gradient(1200px 600px at 20% -10%, #0f1730, #0b1020);
       --panel: #12172a;
       --border: #1f2540;
       --text: #e5e7eb;
@@ -16,6 +21,24 @@
       --accent: #38bdf8;
     }
 
+    /* ===============================
+       Light Mode Overrides
+       =============================== */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --bg-gradient: linear-gradient(180deg, #ffffff, #f8fafc);
+        --panel: #f8fafc;
+        --border: #e5e7eb;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #0284c7;
+      }
+    }
+
+    /* ===============================
+       Base Styles
+       =============================== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,7 +47,7 @@
 
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, #0f1730, var(--bg));
+      background: var(--bg-gradient);
       color: var(--text);
       line-height: 1.65;
     }
@@ -35,7 +58,9 @@
       padding: 80px 24px 100px;
     }
 
-    /* ---------- Header ---------- */
+    /* ===============================
+       Header
+       =============================== */
     header {
       margin-bottom: 64px;
     }
@@ -56,10 +81,12 @@
     .intro {
       max-width: 720px;
       font-size: 1.05rem;
-      color: #d1d5db;
+      color: var(--text);
     }
 
-    /* ---------- Section ---------- */
+    /* ===============================
+       Sections
+       =============================== */
     section {
       margin-top: 72px;
     }
@@ -72,7 +99,9 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* ---------- Skills ---------- */
+    /* ===============================
+       Skills
+       =============================== */
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -95,48 +124,20 @@
     }
 
     .skill-card p {
-      color: #d1d5db;
       font-size: 0.95rem;
+      color: var(--text);
     }
 
-    /* ---------- Projects ---------- */
-    .projects {
-      display: grid;
-      gap: 20px;
-    }
-
-    .project {
-      background: linear-gradient(180deg, #12172a, #0f1426);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .project h3 {
-      font-size: 1.2rem;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .project .meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .project p {
-      color: #d1d5db;
-      font-size: 0.95rem;
-    }
-
-    /* ---------- Contact ---------- */
+    /* ===============================
+       Contact
+       =============================== */
     .contact {
       max-width: 600px;
     }
 
     .contact p {
       margin-bottom: 12px;
-      color: #d1d5db;
+      color: var(--text);
     }
 
     a {
@@ -148,7 +149,9 @@
       text-decoration: underline;
     }
 
-    /* ---------- Footer ---------- */
+    /* ===============================
+       Footer
+       =============================== */
     footer {
       margin-top: 96px;
       padding-top: 24px;
@@ -173,64 +176,45 @@
     </header>
 
     <!-- Skills -->
-<section>
-  <h2>Core Expertise</h2>
+    <section>
+      <h2>Core Expertise</h2>
+      <div class="skills">
+        <div class="skill-card">
+          <h3>Primary Stack</h3>
+          <p>Laravel, Vue.js, Nuxt.js — scalable production systems.</p>
+        </div>
 
-  <div class="skills">
-    <div class="skill-card">
-      <h3>Primary Stack</h3>
-      <p>
-        Laravel, Vue.js, Nuxt.js — building scalable, production-grade web applications
-        with clean architecture and long-term maintainability.
-      </p>
-    </div>
+        <div class="skill-card">
+          <h3>Backend & APIs</h3>
+          <p>PHP 7/8, REST APIs, authentication, payment integrations.</p>
+        </div>
 
-    <div class="skill-card">
-      <h3>Backend & APIs</h3>
-      <p>
-        PHP (7/8), REST APIs, authentication systems, payment gateway integrations,
-        role-based access control.
-      </p>
-    </div>
+        <div class="skill-card">
+          <h3>Frontend & UI</h3>
+          <p>Vue.js, Nuxt.js (SSR), Tailwind CSS.</p>
+        </div>
 
-    <div class="skill-card">
-      <h3>Frontend & UI</h3>
-      <p>
-        Vue.js, Nuxt.js (SSR), Tailwind CSS, responsive and SEO-friendly interfaces.
-      </p>
-    </div>
+        <div class="skill-card">
+          <h3>Databases</h3>
+          <p>MySQL, MongoDB — schema design & optimization.</p>
+        </div>
 
-    <div class="skill-card">
-      <h3>Databases</h3>
-      <p>
-        MySQL, MongoDB — schema design, query optimization, performance tuning.
-      </p>
-    </div>
+        <div class="skill-card">
+          <h3>Legacy & CMS</h3>
+          <p>CodeIgniter, CakePHP, WordPress, OpenCart.</p>
+        </div>
 
-    <div class="skill-card">
-      <h3>Legacy & CMS</h3>
-      <p>
-        CodeIgniter, CakePHP, WordPress, OpenCart — maintaining and modernizing
-        existing production systems.
-      </p>
-    </div>
+        <div class="skill-card">
+          <h3>DevOps & Tooling</h3>
+          <p>Git, CI/CD, Docker & Jenkins (working knowledge).</p>
+        </div>
 
-    <div class="skill-card">
-      <h3>DevOps & Tooling</h3>
-      <p>
-        Git, GitHub, CI/CD workflows, deployment pipelines, Docker & Jenkins (working knowledge).
-      </p>
-    </div>
-
-    <div class="skill-card">
-      <h3>AI Integration</h3>
-      <p>
-        OpenAI / OpenRouter APIs for automation, content generation, and intelligent features.
-      </p>
-    </div>
-  </div>
-</section>
-
+        <div class="skill-card">
+          <h3>AI Integration</h3>
+          <p>OpenAI / OpenRouter APIs.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact -->
     <section>
@@ -239,7 +223,7 @@
         <p>Email: <a href="mailto:dev.chauhan.sourav@gmail.com">dev.chauhan.sourav@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/devChauhanSourav" target="_blank">github.com/devChauhanSourav</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/sourav-chauhan-401157a0" target="_blank">linkedin.com/in/sourav-chauhan</a></p>
-        <p style="color:#9ca3af;">Available for freelance or consulting engagements.</p>
+        <p style="color:var(--muted);">Available for freelance or consulting engagements.</p>
       </div>
     </section>
 
